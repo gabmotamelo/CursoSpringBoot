@@ -1,5 +1,7 @@
 package com.example.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.Objects;
 @Table(name = "tb_users")
 public class Users implements Serializable {
 
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
@@ -18,6 +20,7 @@ public class Users implements Serializable {
     private String phone;
     private String password;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
