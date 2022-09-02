@@ -69,6 +69,4 @@ public class TestConfig implements CommandLineRunner {
         usersRepository.saveAll(Arrays.asList(u1, u2));
         orderRepository.saveAll(Arrays.asList(o1,o2,o3));
     }
-
-
 }
